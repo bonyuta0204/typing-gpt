@@ -1,18 +1,28 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div id="app">
+    <h1>タイピング練習ゲーム</h1>
+    <TypingText />
+    <ErrorIndicator />
+    <ScoreDisplay />
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
+
+
+<script lang="ts">
+import { defineComponent } from 'vue';
+import TypingText from './components/TypingText.vue';
+import ErrorIndicator from './components/ErrorIndicator.vue';
+import ScoreDisplay from './components/ScoreDisplay.vue';
+
+export default defineComponent({
+  name: 'App',
+  components: {
+    TypingText,
+    ErrorIndicator,
+    ScoreDisplay,
+  },
+});
+</script>
 
 <style scoped>
 .logo {
